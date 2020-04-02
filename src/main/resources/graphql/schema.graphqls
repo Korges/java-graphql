@@ -1,10 +1,15 @@
+interface Human {
+    firstName: String
+    lastName: String
+}
+
 type Lecutre {
     id: ID!
     description: String
     subject: Subject
 }
 
-type Student {
+type Student implements Human {
     id: ID!
     firstName: String
     lastName: String
@@ -18,7 +23,7 @@ type Subject {
     teacher: Teacher
 }
 
-type Teacher {
+type Teacher implements Human {
     id: ID!
     firstName: String
     lastName: String
@@ -32,6 +37,7 @@ type Query {
     allStudents: [Student]
     allSubjects: [Subject]
     allTeachers: [Teacher]
+    allHumans: [Human]
     allSubjectsAndLectures: [SubjectAndLecture]
 }
 

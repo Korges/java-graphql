@@ -11,13 +11,11 @@ import java.util.List;
 
 @Data
 @Entity
-public class Student {
+public class Student extends Human{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstName;
-    private String lastName;
     @ManyToMany
     private List<Subject> subjectList;
 

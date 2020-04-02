@@ -1,6 +1,7 @@
 package com.korges.javagraphql.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import com.korges.javagraphql.pojo.Human;
 import com.korges.javagraphql.pojo.Lecture;
 import com.korges.javagraphql.pojo.Student;
 import com.korges.javagraphql.pojo.Subject;
@@ -37,9 +38,17 @@ public class Query implements GraphQLQueryResolver {
         return this.teacherService.findAll();
     }
 
+    public List<Human> allHumans() {
+        List humanList = this.teacherService.findAll();
+        humanList.addAll(this.studentService.findAll());
+
+        return humanList;
+    }
+
     public List<Object> allSubjectsAndLectures() {
         List personList = this.subjectService.findAll();
         personList.addAll(this.lectureService.findAll());
+
         return personList;
     }
 }
