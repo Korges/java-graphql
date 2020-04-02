@@ -1,0 +1,37 @@
+type Lecutre {
+    id: ID!
+    description: String
+    subject: Subject
+}
+
+type Student {
+    id: ID!
+    firstName: String
+    lastName: String
+    subjectList: [Subject]
+}
+
+type Subject {
+    id: ID!
+    title: String
+    lectureList: [Lecutre]
+    teacher: Teacher
+}
+
+type Teacher {
+    id: ID!
+    firstName: String
+    lastName: String
+    subjectList: [Subject]
+}
+
+type Query {
+    allLectures: [Lecutre]
+    allStudents: [Student]
+    allSubjects: [Subject]
+    allTeachers: [Teacher]
+}
+
+schema {
+    query: Query
+}
