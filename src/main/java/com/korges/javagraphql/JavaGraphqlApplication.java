@@ -2,6 +2,7 @@ package com.korges.javagraphql;
 
 import com.coxautodev.graphql.tools.SchemaParser;
 import com.korges.javagraphql.resolver.LectureResolver;
+import com.korges.javagraphql.resolver.Mutation;
 import com.korges.javagraphql.resolver.Query;
 import com.korges.javagraphql.resolver.StudentResolver;
 import com.korges.javagraphql.resolver.SubjectResolver;
@@ -60,7 +61,8 @@ public class JavaGraphqlApplication {
                         new LectureResolver(lectureService),
                         new StudentResolver(studentService),
                         new SubjectResolver(subjectService),
-                        new TeacherResolver(teacherService)
+                        new TeacherResolver(teacherService),
+                        new Mutation(lectureService, studentService, subjectService, teacherService)
                 )
                 .build()
                 .makeExecutableSchema();

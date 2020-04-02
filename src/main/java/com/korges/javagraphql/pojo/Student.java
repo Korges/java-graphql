@@ -1,6 +1,10 @@
 package com.korges.javagraphql.pojo;
 
+import com.korges.javagraphql.pojo.input.StudentInput;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.List;
 
-@Data
+@Getter
 @Entity
-public class Student extends Human{
+@SuperBuilder
+@NoArgsConstructor
+public class Student extends Human {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

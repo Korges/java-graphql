@@ -30,6 +30,10 @@ type Teacher implements Human {
     subjectList: [Subject]
 }
 
+type Mutation {
+    addStudent(student: StudentInput) : Student
+}
+
 union SubjectAndLecture = Subject | Lecutre
 
 type Query {
@@ -43,4 +47,27 @@ type Query {
 
 schema {
     query: Query
+}
+
+input LectureInput {
+    description: String
+    subject: SubjectInput
+}
+
+input TeacherInput {
+    firstName: String
+    lastName: String
+    subjectList: [SubjectInput]
+}
+
+input SubjectInput {
+    title: String
+    lectureList: [LectureInput]
+    teacher: TeacherInput
+}
+
+input StudentInput {
+    firstName: String
+    lastName: String
+    subjectList: [SubjectInput]
 }

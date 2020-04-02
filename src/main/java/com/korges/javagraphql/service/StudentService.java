@@ -21,4 +21,8 @@ public class StudentService {
     public List<Subject> findSubjectListByGivenStudent(Student student) {
         return repository.findSubjectListByStudent(student.getId());
     }
+
+    public Student save(Student student) {
+        return this.repository.save(student);
+    }
 }

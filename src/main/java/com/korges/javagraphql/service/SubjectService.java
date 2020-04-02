@@ -26,4 +26,8 @@ public class SubjectService {
     public Teacher findTeacherByGivenSubject(Subject subject) {
         return this.repository.findTeacherByGivenSubject(subject.getId());
     }
+
+    public Subject save(Subject subject) {
+        return this.repository.save(subject);
+    }
 }
