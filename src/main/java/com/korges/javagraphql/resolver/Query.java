@@ -36,4 +36,10 @@ public class Query implements GraphQLQueryResolver {
     public List<Teacher> allTeachers() {
         return this.teacherService.findAll();
     }
+
+    public List<Object> allSubjectsAndLectures() {
+        List personList = this.subjectService.findAll();
+        personList.addAll(this.lectureService.findAll());
+        return personList;
+    }
 }

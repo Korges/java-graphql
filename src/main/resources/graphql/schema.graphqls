@@ -25,11 +25,14 @@ type Teacher {
     subjectList: [Subject]
 }
 
+union SubjectAndLecture = Subject | Lecutre
+
 type Query {
     allLectures: [Lecutre]
     allStudents: [Student]
     allSubjects: [Subject]
     allTeachers: [Teacher]
+    allSubjectsAndLectures: [SubjectAndLecture]
 }
 
 schema {
