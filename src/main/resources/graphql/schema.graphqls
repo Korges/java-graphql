@@ -31,7 +31,9 @@ type Teacher implements Human {
 }
 
 type Mutation {
-    addStudent(student: StudentInput) : Student
+    addStudent(student: HumanInput) : Student
+    addTeacher(teacher: HumanInput) : Teacher
+    addSubject(subject: SubjectInput) : Subject
 }
 
 union SubjectAndLecture = Subject | Lecutre
@@ -54,20 +56,11 @@ input LectureInput {
     subject: SubjectInput
 }
 
-input TeacherInput {
+input HumanInput {
     firstName: String
     lastName: String
-    subjectList: [SubjectInput]
 }
 
 input SubjectInput {
     title: String
-    lectureList: [LectureInput]
-    teacher: TeacherInput
-}
-
-input StudentInput {
-    firstName: String
-    lastName: String
-    subjectList: [SubjectInput]
 }

@@ -5,9 +5,11 @@ import com.korges.javagraphql.pojo.Subject;
 import com.korges.javagraphql.pojo.Teacher;
 import com.korges.javagraphql.service.TeacherService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 @RequiredArgsConstructor
 public class TeacherResolver implements GraphQLResolver<Teacher> {
 

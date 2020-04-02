@@ -22,5 +22,5 @@ public class Subject {
     private List<Lecture> lectureList;
     @ManyToOne
     private Teacher teacher;
-
 }
+

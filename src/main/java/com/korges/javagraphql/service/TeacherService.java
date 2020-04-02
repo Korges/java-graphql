@@ -21,4 +21,8 @@ public class TeacherService {
     public List<Subject> findSubjectListByGivenTeacher(Teacher teacher) {
         return this.repository.findSubjectListByGivenTeacher(teacher.getId());
     }
+
+    public Teacher save(Teacher teacher) {
+        return this.repository.save(teacher);
+    }
 }

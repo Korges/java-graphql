@@ -11,9 +11,11 @@ import com.korges.javagraphql.service.StudentService;
 import com.korges.javagraphql.service.SubjectService;
 import com.korges.javagraphql.service.TeacherService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 @RequiredArgsConstructor
 public class Query implements GraphQLQueryResolver {
 

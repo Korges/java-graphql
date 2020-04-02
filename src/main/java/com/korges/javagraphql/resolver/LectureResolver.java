@@ -5,7 +5,9 @@ import com.korges.javagraphql.pojo.Lecture;
 import com.korges.javagraphql.pojo.Subject;
 import com.korges.javagraphql.service.LectureService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
+@Component
 @RequiredArgsConstructor
 public class LectureResolver implements GraphQLResolver<Lecture> {
 
